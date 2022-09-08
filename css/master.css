@@ -1,0 +1,888 @@
+:root{
+    --main-color: #00d498d1;
+    --main-transition:.7s ease-in-out ;
+}
+html {
+    scroll-behavior: smooth;
+}
+ .top-bar > .basic-ul{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    background-color:rgba(0, 128, 0, 0.479);
+    border-bottom: 1px solid black;
+    position: fixed;
+    top:0px;
+    opacity: 1;
+    z-index: 100;
+}
+ 
+.top-bar> .basic-ul >li:first-child::before{
+    content: "";
+    position: absolute;
+    width: calc(100% * 11);
+    height: 100%;
+    background-color: green;
+}
+
+.top-bar> .basic-ul >li{
+    position: relative;
+    height: 100%;
+    min-width: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.top-bar> .basic-ul >li::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    opacity: 1.3;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.top-bar >.basic-ul > li:hover::after{
+    background-color: rgba(119, 119, 119);
+    opacity: 0;
+}
+.top-bar >.basic-ul > li:hover a{
+    color:white;
+}
+.top-bar >.basic-ul > li:last-child:hover{
+    color: white;
+}
+.top-bar> .basic-ul > li:first-child:hover i{
+    color: white;
+}
+.top-bar> .basic-ul > li:first-child > i{
+    position: absolute;
+    left:15px;
+}
+.top-bar > .basic-ul > li a{
+    text-decoration: none;
+    color: black;
+    z-index: 50;
+}
+.top-bar> .basic-ul > .last-li::before { 
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.top-bar> .basic-ul > .last-li:hover::before { 
+    
+    border-color: white transparent transparent transparent;
+    
+}
+.top-bar .basic-ul>  li:last-child:hover .scand-ul{
+    display: inline;
+}
+ 
+.top-bar .basic-ul>  li:last-child >.scand-ul{
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    padding: 0px;
+    background-color: white;
+    display: none;
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+}
+.top-bar .basic-ul>  li:last-child >.scand-ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: black;
+    border-bottom: 1px solid #555;
+}
+ 
+.top-bar img{
+     width: 100%;
+ }
+.top-bar > i{
+    position: fixed;
+    right: 10px;
+    top:5px;
+    color: white;
+    display: none;
+    z-index: 1000;
+}
+@media(max-width:900px){
+    .top-bar{
+         position: relative;
+         z-index: 10000;
+    }
+    .top-bar img{
+        position: relative;
+        top: 30px;
+        z-index: -10;
+    }
+    .top-bar > .basic-ul {
+        flex-direction: column;
+        height: auto;
+    }
+    .top-bar> .basic-ul >:not(:nth-child(1)){
+        display:  flex ;
+        transition: 10s ease-out;
+        -webkit-transition: 10s ease-out;
+        -moz-transition: 10s ease-out;
+        -ms-transition: 10s ease-out;
+        -o-transition: 10s ease-out;
+        position: relative;    
+    }
+    .top-bar> .basic-ul >li {
+        justify-content: flex-start;
+        height: 30;
+         
+    }
+    .top-bar> .basic-ul >li:nth-child(1):after{
+        width: 0px;
+        height: 0px;
+    }
+    .top-bar >.basic-ul > li:nth-child(1) a{
+        color:white;
+    }
+    .top-bar > .basic-ul > li a {
+        position: relative;
+        left: 20px;
+        font-size: 20px;
+    }
+    .top-bar> .basic-ul > li:first-child > i {
+        left: 1px;
+        color:white;
+    }
+    .top-bar > i{
+        display: inline;
+    }
+    .top-bar >i:hover + .basic-ul >:not(:nth-child(1)) {
+        display: none  ;
+        transition: 100s;
+        -webkit-transition: 100s;
+        -moz-transition: 100s;
+        -ms-transition: 100s;
+        -o-transition: 100s;
+    }
+    .top-bar> .basic-ul > li:hover ,
+        .top-bar> .basic-ul:hover{ 
+        display: flex;
+    }
+}
+ 
+.team .inf-team div img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top:10px;
+    transform:translate(-50%);
+    -webkit-transform:translate(-50%);
+    -moz-transform:translate(-50%);
+    -ms-transform:translate(-50%);
+    -o-transform:translate(-50%);
+}
+.team >h2{
+    position: relative;
+    left: 50%;
+    border: 4px solid  var(--main-color);
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    height: 28px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.team >h2::after{
+    content:"";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    right: -30px;
+    top: 50%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.team >h2::before{
+    content:"";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.team >h2:hover{
+    color: white;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.team >h2:hover::after{
+    z-index: -100;
+    animation: title1 .4s linear forwards  ;
+    -webkit-animation: title1 .4s linear forwards  ;
+}
+.team >h2:hover::before{
+    z-index: -2;
+    animation: title .4s linear forwards  ;
+    -webkit-animation: title .4s linear forwards  ;
+}
+@keyframes title1{
+    50%{
+        right: 0px;
+        width: 10px;
+        height: 10px;
+    }
+    100%{
+        right: 0px;
+        border-radius: 0px;
+        width: 50%;
+        height: 100%;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+}
+}
+@keyframes title {
+    50%{
+        right: 0px;
+        width: 10px;
+        height: 10px;
+    }
+    100%{
+        left: 0px;
+        border-radius: 0px;
+        width: 50%;
+        height: 100%;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+
+}
+}
+.team >h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.team{
+    position: relative;
+    top:30px
+ }
+.team .inf-team{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(4,25%);
+    margin-left: 5px;
+}
+.team .inf-team div{
+    position: relative;
+    background-color: rgba(85, 85, 85, 0.06);
+    width: 80%;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    position: relative;
+    left: 20px;
+    margin-bottom: 20px;
+}
+.team .inf-team div >h2{
+    text-align: center;
+}
+.team .inf-team div >h3{
+     
+    text-align: center;
+}
+.team .inf-team div::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 14, 4, 0.192);
+    z-index: 3;
+    top: 0px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+
+ }
+.team .inf-team div:hover:after{
+    width:0px;
+    height:0px;
+}
+
+@media(max-width:900px){
+    .team .inf-team{
+        grid-template-columns: repeat(1,100%);
+    }
+    .team .inf-team div{
+        margin-left: 2px;
+    }
+}
+.all-work{
+    background-color: rgba(85, 85, 85, 0.07);
+}
+.work{
+    margin-top:150px;
+    width: 90%;
+    margin-left: 5%;
+}
+.work .inf-work div img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 30%;
+    top: 2px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 5px solid white;
+}
+ .work .inf-work div img +h3 {
+    text-align: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 10px 0px 10px 0px;
+
+
+ }
+
+.work .inf-work div{
+    background-color: var(--main-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.work .inf-work {
+    display: grid;
+    grid-template-columns: repeat(4,24%);
+    justify-content: space-between;
+}
+.work .inf-work div ul {
+    margin: 0px;
+    list-style-type: none;
+    padding: 0px;
+
+}
+.work .inf-work div ul li{
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid white;
+}
+
+.all-work .work> h3{
+    position: relative;
+    left: 50%;
+    top: -20;
+    border: 4px solid var(--main-color);
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    height: 28px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.all-work .work> h3::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    right: -30px;
+    top: 50%;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+    transform: translateY(-50%);
+}
+.all-work .work> h3::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+    transform: translateY(-50%);
+}
+
+.all-work .work> h3:hover::after{
+    z-index: -100;
+    animation: title1 .4s linear forwards  ;
+    -webkit-animation: title1 .4s linear forwards  ;
+}
+
+.all-work .work> h3:hover::before{
+    z-index: -2;
+    animation: title .4s linear forwards  ;
+    -webkit-animation: title .4s linear forwards  ;
+}
+.all-work .work> h3:hover{
+    color: white;
+    transition: 4s;
+    -webkit-transition: 4s;
+    -moz-transition: 4s;
+    -ms-transition: 4s;
+    -o-transition: 4s;
+}
+.work .inf-work div:first-child{
+    height: 388px;
+     overflow: scroll;
+}
+
+.work .inf-work div h4{
+    color: white;  
+    line-height: 1.7;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid ;
+    position: relative;
+    top: -21px;
+    border-radius: 10px;
+}
+.work .inf-work div p{
+    color: white;  
+    height: 70%;
+    line-height: 1.7;
+    padding: 5px;
+}
+@media(max-width:900px){
+    .work .inf-work {
+        display: grid;
+        grid-template-columns: repeat(2,48%);
+        justify-content: space-between;
+    }
+}
+.price >h3{
+    position: relative;
+    left: 50%;
+    top:20px;
+     border: 4px solid var(--main-color);
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    height: 28px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.price >h3::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    right: -30px;
+    top: 50%;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+    transform: translateY(-50%);
+}
+.price >h3::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+    transform: translateY(-50%);
+}
+.price >h3:hover:after{
+    z-index: -100;
+    animation: title1 .4s linear forwards  ;
+    -webkit-animation: title1 .4s linear forwards  ;
+}
+.price>h3:hover::before{
+    z-index: -2;
+    animation: title .4s linear forwards  ;
+    -webkit-animation: title .4s linear forwards  ;
+}
+.price>h3:hover{
+    color: white;
+    transition: 4s;
+    -webkit-transition: 4s;
+    -moz-transition: 4s;
+    -ms-transition: 4s;
+    -o-transition: 4s;
+}
+.all-price{
+    background-color: rgba(85, 85, 85, 0.07);
+
+}
+.price{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+}
+.price >div{
+    display: grid;
+    grid-template-columns: repeat(3,250px);
+    justify-content: space-evenly;
+}
+.price >div >div:hover{
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+ }
+
+.price >div div> h1{
+    text-align: center;
+    background-color: var(--main-color);
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 22px;
+
+ }
+ .price >div >div{
+    height: 318px;
+ }
+
+ .price >div div> ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    position: relative;
+    top: -41px;
+ }
+ .price >div div> ul li{
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    background-color: rgba(85, 85, 85, 0.171);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+}
+ .price >div div> h4{
+    margin: 0px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    background-color: rgba(85, 85, 85, 0.171);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+    position: relative;
+    top: -41px;
+}
+
+.price >div div> h4 span{
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 4px;
+}
+.price >div div> h5{
+    margin: 0px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    background-color: rgba(85, 85, 85, 0.171);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+    opacity: .6;
+    position: relative;
+    top: -41px;
+}
+.price >div div> .button{
+    height: 41px;
+    background-color: rgba(85, 85, 85, 0.171);
+    position: relative;
+    top: -41px;
+
+}
+.price >div div> .button:hover button{
+    background-color: var(--main-color);
+    color: white;
+    border-color: white;
+}
+.price >div div> button{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,25%);
+    -webkit-transform: translate(-50%,25%);
+    -moz-transform: translate(-50%,25%);
+    -ms-transform: translate(-50%,25%);
+    -o-transform: translate(-50%,25%);
+    
+}
+.contact{
+    margin-top: 50px;
+    background-color: rgba(85, 85, 85, 0.07);
+    min-height: 400px;
+}
+.contact >h3{
+    position: relative;
+    left: 50%;
+    border: 4px solid var(--main-color);
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    height: 28px;
+    transform: translate(-50%,25%);
+    -webkit-transform: translate(-50%,25%);
+    -moz-transform: translate(-50%,25%);
+    -ms-transform: translate(-50%,25%);
+    -o-transform: translate(-50%,25%);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.contact >h3:hover{
+    color: white;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.contact >h3::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    right: -30px;
+    top: 50%;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+    transform: translateY(-50%);
+}
+.contact >h3::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+    transform: translateY(-50%);
+}
+.contact >h3:hover::after{
+    z-index: -100;
+    animation: title1 .4s linear forwards  ;
+    -webkit-animation: title1 .4s linear forwards  ;
+}
+.contact >h3:hover::before{
+    z-index: -2;
+    animation: title .4s linear forwards  ;
+    -webkit-animation: title .4s linear forwards  ;
+}
+.contact > div{
+    width: 90%;
+    margin-left: 5%;
+}
+.contact > div >.inf-contact{
+    display:flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 50px;
+}
+.contact > div >.inf-contact>div{
+    width: 400px;
+}
+.contact > div >.inf-contact>div >ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+.contact > div >.inf-contact>div >ul >li>h4{
+    position: relative;
+    top: -38px;
+    left: 24px;
+    color: rgba(0, 0, 0, 0.363);
+}
+.contact > div >.inf-contact>div >ul >li>i{
+    color: var(--main-color);
+}
+
+.contact > div >.inf-contact>div>form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    height: 250px;
+    
+}
+
+.contact > div >.inf-contact>div>form:hover{
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%) ;
+ } 
+.contact > div >.inf-contact>div>form >input{
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(85, 85, 85, 0.247);
+    margin: 15px 0px 15px 0px;
+}
+.contact > div >.inf-contact>div>form > div{
+    position: relative;
+ }
+.contact > div >.inf-contact>div>form >div >button{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    padding: 5px 15px 5px 15px ;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-color: transparent;
+}
+.contact > div >.inf-contact>div>form >div >input{
+    position: absolute;
+    top: 21px;
+}
+.contact > div >.inf-contact>div>form >div >label{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.social{
+    /* background-color: black; */
+    text-align: center;
+    margin-top: 50px;
+    padding: 0px;
+    position: relative;
+    top: 22;
+    border-top: 2px solid var(--main-color);
+    height: 200px;
+}
+.social >h2{
+    color: red;
+} 
+.social >div {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.social >div a{
+    color: white;
+    margin-left: 10px;
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: 3px solid red;
+}
+.social >div >div:hover{
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.social >div >div:hover{
+    transform: rotate(1turn);
+    -webkit-transform: rotate(1turn);
+    -moz-transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    -o-transform: rotate(1turn);
+}
+
+@media(max-width:900px){
+
+    .price >div {
+        grid-template-columns: repeat(1,100%);
+
+    }
+    .price >div >div {
+        margin-bottom: 20px;
+    }
+    .contact > div >.inf-contact {
+        flex-wrap: wrap;
+    }
+    .social >h1{
+        margin-top: 40px;
+        font-size: 20px;
+    }
+}
